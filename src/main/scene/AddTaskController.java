@@ -2,6 +2,7 @@ package main.scene;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 
 import java.net.URL;
@@ -17,12 +18,12 @@ public class AddTaskController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        priority.getItems().addAll("Very Emergent","Emergent","Normal");
+        priority.getItems().addAll("Very urgent","Urgent","Normal");
     }
     @FXML private javafx.scene.control.Button saveButton;
 
     @FXML
-    private void closeButtonAction(){
+    private void saveButtonAction(ActionEvent event){
         // get a handle to the stage
         Stage stage = (Stage) saveButton.getScene().getWindow();
         // do what you have to do
