@@ -1,0 +1,16 @@
+.toggle-button{
+ -fx-background-color:transparent;
+
+}
+.toggle-button:selected{
+    -fx-background-color:#21d757;
+    -fx-effect: dropshadow(three-pass-box, black, 10, 0, 0, 0)
+
+
+}
+#userIcon{
+    -fx-background-color:transparent;
+}
+#userIcon:hover{
+    -fx-background-color:#679105;
+}

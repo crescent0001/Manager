@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="672.0" prefWidth="917.0" stylesheets="@email.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.scene.emailController">
+   <children>
+      <HBox layoutX="138.0" layoutY="200.0" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="632.0" prefWidth="109.0">
+               <children>
+                  <VBox layoutX="30.0" layoutY="77.0" prefHeight="632.0" prefWidth="119.0" style="-fx-background-color: #eaebed;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ToggleButton fx:id="inboxButton" mnemonicParsing="false" onAction="#inbox" prefHeight="50.0" prefWidth="120.0" text="Inbox">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="topic" />
+                           </toggleGroup></ToggleButton>
+                        <ToggleButton mnemonicParsing="false" onAction="#sent" prefHeight="50.0" prefWidth="120.0" text="Sent" toggleGroup="$topic" />
+                        <ToggleButton mnemonicParsing="false" onAction="#important" prefHeight="50.0" prefWidth="120.0" text="Important" toggleGroup="$topic" />
+                        <ToggleButton mnemonicParsing="false" onAction="#trash" prefHeight="50.0" prefWidth="120.0" text="Trash" toggleGroup="$topic" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="topicText" layoutX="9.0" layoutY="12.0" prefHeight="30.0" prefWidth="183.0" textFill="#21d575">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="emailList" layoutY="44.0" prefHeight="628.0" prefWidth="200.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="672.0" prefWidth="611.0" style="-fx-background-color: #eaebed;">
+               <children>
+                  <Label layoutX="37.0" layoutY="17.0" prefHeight="56.0" prefWidth="265.0" text="Email topic" textFill="#21d757">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="emailDate" layoutX="381.0" layoutY="38.0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutY="82.0" prefHeight="592.0" prefWidth="610.0">
+                     <children>
+                        <ScrollPane fx:id="emailContent" layoutX="58.0" layoutY="46.0" prefHeight="592.0" prefWidth="610.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <content>
+                              <AnchorPane prefHeight="589.0" prefWidth="608.0">
+                                 <children>
+                                    <Label layoutX="223.0" layoutY="231.0" prefHeight="64.0" prefWidth="149.0" text="Email Content" textAlignment="CENTER" textFill="#21d757">
+                                       <font>
+                                          <Font size="23.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </content></ScrollPane>
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="482.0" layoutY="30.0" text="Date" textFill="#21d757">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

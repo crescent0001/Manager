@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="672.0" prefWidth="917.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.scene.NotesController">
+   <children>
+      <HBox layoutX="400.0" layoutY="342.0" prefHeight="800.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="672.0" prefWidth="208.0" style="-fx-background-color: #caccce;">
+               <children>
+                  <Pane prefHeight="78.0" prefWidth="145.0">
+                     <children>
+                        <TextField alignment="CENTER" layoutX="16.0" layoutY="24.0" prefHeight="31.0" prefWidth="113.0" promptText="Search" />
+                     </children>
+                  </Pane>
+                  <Button mnemonicParsing="false" prefHeight="76.0" prefWidth="165.0" text="Personal" />
+                  <Button mnemonicParsing="false" prefHeight="76.0" prefWidth="165.0" text="OOPP" />
+                  <Button mnemonicParsing="false" prefHeight="76.0" prefWidth="165.0" text="DMID" />
+                  <Button mnemonicParsing="false" prefHeight="76.0" prefWidth="165.0" text="IP Networking" />
+                  <Button mnemonicParsing="false" prefHeight="76.0" prefWidth="165.0" text="Carrer Guidance" />
+                  <Button mnemonicParsing="false" prefHeight="76.0" prefWidth="165.0" text="Pillars Of Life" />
+                  <Button mnemonicParsing="false" prefHeight="76.0" prefWidth="165.0" text="etc." />
+               </children>
+            </VBox>
+            <AnchorPane prefHeight="800.0" prefWidth="683.0">
+               <children>
+                  <VBox prefHeight="672.0" prefWidth="642.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Pane prefHeight="135.0" prefWidth="620.0">
+                           <children>
+                              <AnchorPane layoutX="2.0" prefHeight="85.0" prefWidth="638.0" style="-fx-background-color: #21d575;">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="78.0" prefWidth="620.0" text="Personal" textFill="WHITE">
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <effect>
+                                    <DropShadow blurType="GAUSSIAN" />
+                                 </effect>
+                              </AnchorPane>
+                           </children>
+                        </Pane>
+                        <ScrollPane prefHeight="329.0" prefWidth="681.0">
+                           <content>
+                              <GridPane alignment="CENTER" prefHeight="752.0" prefWidth="624.0">
+                                 <children>
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Note 6" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#noteClick" text="Note 1" GridPane.rowIndex="1" />
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" GridPane.columnIndex="1" />
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Note 5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Note 4" GridPane.rowIndex="2" />
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="152.0" prefWidth="154.0" text="Note 3" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Note 2" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" GridPane.columnIndex="2" />
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-text-fill: #21d575;" text="Pinned Notes" GridPane.columnSpan="3">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Button>
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Note 7" GridPane.rowIndex="3" />
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Note 8" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Note 9" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Note 10" GridPane.rowIndex="4" />
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Note 11" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Note 12" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                 </children>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                              </GridPane>
+                           </content>
+                        </ScrollPane>
+                        <ScrollPane prefHeight="380.0" prefWidth="681.0">
+                           <content>
+                              <GridPane alignment="CENTER" prefHeight="758.0" prefWidth="624.0">
+                                 <children>
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Note 9" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Note 4" GridPane.rowIndex="1" />
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Note 2" GridPane.columnIndex="1" />
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Note 8" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Note 7" GridPane.rowIndex="2" />
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Note 6" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Note 5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="149.0" prefWidth="126.0" text="Note 3" GridPane.columnIndex="2" />
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Note 1">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Button>
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Note 10" GridPane.rowIndex="3" />
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Note 11" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Note 12" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Note 13" GridPane.rowIndex="4" />
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Note 14" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Note 15" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                 </children>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                              </GridPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <VBox prefHeight="800.0" prefWidth="160.0" style="-fx-background-color: caccce;">
+               <children>
+                  <AnchorPane />
+                  <AnchorPane prefHeight="701.0" prefWidth="116.0">
+                     <children>
+                        <ListView fx:id="memberListView" layoutX="1.0" layoutY="78.0" prefHeight="594.0" prefWidth="116.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="78.0" />
+                        <Label layoutX="2.0" layoutY="1.0" prefHeight="76.0" prefWidth="113.0" text="Members">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children></VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
