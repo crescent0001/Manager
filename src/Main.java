@@ -3,8 +3,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import util.PomodoroTimer;
 
 import java.awt.*;
+
 
 public class Main extends Application {
 
@@ -16,11 +18,15 @@ public class Main extends Application {
         primaryStage.setTitle("Personal Manager");
         primaryStage.setScene(new Scene(root));
         //primaryStage.setResizable(false);
+        //primaryStage.setWidth(root.getScene().getWidth());
         primaryStage.show();
     }
 
 
     public static void main(String[] args) {
+
+        //PomodoroTimer timer=new PomodoroTimer();
+        //timer.start();
         launch(args);
     }
 }

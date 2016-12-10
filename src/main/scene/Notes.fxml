@@ -60,7 +60,10 @@
                               <GridPane alignment="CENTER" prefHeight="752.0" prefWidth="624.0">
                                  <children>
                                     <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Note 6" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#noteClick" text="Note 1" GridPane.rowIndex="1" />
+                                    <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#noteClick" text="+" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="52.0" />
+                                       </font></Button>
                                     <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" GridPane.columnIndex="1" />
                                     <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Note 5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                     <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Note 4" GridPane.rowIndex="2" />

@@ -1,0 +1,26 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" build-on-make="true" name="Manager">
+    <output-path>$PROJECT_DIR$/out/artifacts/Manager</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="alias" value="" />
+        <option name="appClass" value="Main" />
+        <option name="description" value="" />
+        <option name="enabledSigning" value="true" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="keystore" value="" />
+        <option name="nativeBundle" value="exe" />
+        <option name="title" value="Personal Manager" />
+        <option name="updateMode" value="always" />
+        <option name="vendor" value="Team cat" />
+        <option name="version" value="1.0" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="Manager.jar">
+        <element id="module-output" name="Manager" />
+        <element id="file-copy" path="$PROJECT_DIR$/library/jfoenix.jar" />
+      </element>
+    </root>
+  </artifact>
+</component>
