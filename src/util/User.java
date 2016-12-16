@@ -2,7 +2,7 @@ package util;
 ///nnned update fotr field date
 import database.SqlAccess;
 
-import java.util.Date;
+import java.sql.Date;
 
 /**
  * Created by hehef on 12/16/2016.
@@ -78,7 +78,7 @@ public class User {
     public void updateDataBase(){
         SqlAccess sqlAccess=new SqlAccess();
         sqlAccess.openConnection();
-        sqlAccess.insertData("user","\""+name+"\",\""+gender+"\","+"3/25/2016"+",\""+adminNo+"\",\""+email+"\",\""+password+"\"");
+        sqlAccess.insertData("user","\""+name+"\",\""+gender+"\","+birthDate+",\""+adminNo+"\",\""+email+"\",\""+password+"\"");
         sqlAccess.closeConnection();
     }
 }

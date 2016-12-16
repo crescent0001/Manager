@@ -3,7 +3,7 @@ package main.scene;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URL;
-import java.util.Date;
+import java.sql.Date;
 import java.util.ResourceBundle;
 
 import database.SqlAccess;
@@ -69,7 +69,7 @@ public class CreateAccountController implements Initializable {
         User user=new User(
                 nameField.getText(),
                 genderGroup.getSelectedToggle().getUserData().toString(),
-                new Date(),
+                new Date(yearField.getText(),,dayField.getText()),
                 passwordField.getText(),
                 adminNoField.getText(),
                 emailField.getText());

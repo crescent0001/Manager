@@ -73,7 +73,8 @@ public class SqlAccess {
         if(statement!=null){
             try{
                 for(String v : values){
-                    System.out.println("INSERT INTO "+tableName+" VALUES("+v+")");
+                    //print out sql syntax
+                    //System.out.println("INSERT INTO "+tableName+" VALUES("+v+")");
                     statement.executeUpdate("INSERT INTO "+tableName+" VALUES("+v+")");
                 }
             }catch (SQLException e){
