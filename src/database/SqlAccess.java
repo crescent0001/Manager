@@ -1,13 +1,14 @@
 package database;
 
 import java.sql.*;
-
+//not tested
 /**
  * Created by hehef on 12/15/2016.
  */
 public class SqlAccess {
     private final String DRIVER="com.mysql.jdbc.Driver";
-    private String databaseURL="jdbc:mysql://localhost:3306/manager?useSSL=false";
+    private final String DEFAULT_DATABASE_URL="jdbc:mysql://localhost:3306/manager?useSSL=false";
+    private String databaseURL;
     private Connection connection=null;
     private Statement statement=null;
     private ResultSet rs;
@@ -17,16 +18,48 @@ public class SqlAccess {
 
 
     public SqlAccess(){
-        //register driver
+
         userName="user";
         password="12345";
+        setDefaultURL();
 
+        //register driver
         try{
             Class.forName(DRIVER);
         }catch(ClassNotFoundException e){
             System.out.println("Driver not fount :"+e.getMessage());
         }
     }
+    public void setDefaultURL(){
+        databaseURL=DEFAULT_DATABASE_URL;
+    }
+    public void setDataBaseURL(String hostIP){
+        databaseURL="jdbc:mysql://"+hostIP+":3306/manager?useSSL=false";
+    }
+    public void setDataBaseURL(String hostIP,String port){
+        databaseURL="jdbc:mysql://"+hostIP+":"+port+"/manager?useSSL=false";
+    }
+    public void setDataBaseURL(String hostIP,String port,String database){
+        databaseURL="jdbc:mysql://"+hostIP+":"+port+"/+"+database+"?useSSL=false";
+    }
+
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public void openConnection(){
         try{
             connection= DriverManager.getConnection(databaseURL,userName,password);

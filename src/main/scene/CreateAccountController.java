@@ -16,6 +16,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.scene.Node;
+import util.User;
 
 import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Node;
 
@@ -65,20 +66,14 @@ public class CreateAccountController implements Initializable {
     }
     @FXML
     void signUp(ActionEvent event) {
-        String name=nameField.getText();
-        String gender=genderGroup.getSelectedToggle().getUserData().toString();
-        //Date birthDate=new Date();
-
-        String adminNo=adminNoField.getText();
-        String email=emailField.getText();
-        String password=passwordField.getText();
-        SqlAccess sqlAccess=new SqlAccess();
-        sqlAccess.openConnection();
-        sqlAccess.insertData("user","\""+name+"\",\""+gender+"\","+"3/25/2016"+",\""+adminNo+"\",\""+email+"\",\""+password+"\"");
-        sqlAccess.closeConnection();
-
-
-
+        User user=new User(
+                nameField.getText(),
+                genderGroup.getSelectedToggle().getUserData().toString(),
+                new Date(),
+                passwordField.getText(),
+                adminNoField.getText(),
+                emailField.getText());
+        user.updateDataBase();
 
         try{
             Stage stage=(Stage)((Node)event.getTarget()).getScene().getWindow();
