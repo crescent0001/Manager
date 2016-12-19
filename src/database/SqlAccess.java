@@ -10,6 +10,9 @@ public class SqlAccess {
     private final String DEFAULT_DATABASE_URL="jdbc:mysql://localhost:3306/manager?useSSL=false";
     private String databaseURL;
     private Connection connection=null;
+
+
+
     private Statement statement=null;
     private ResultSet rs;
 
@@ -43,6 +46,29 @@ public class SqlAccess {
         databaseURL="jdbc:mysql://"+hostIP+":"+port+"/+"+database+"?useSSL=false";
     }
 
+    public Connection getConnection() {
+        return connection;
+    }
+
+    public void setConnection(Connection connection) {
+        this.connection = connection;
+    }
+
+    public Statement getStatement() {
+        return statement;
+    }
+
+    public void setStatement(Statement statement) {
+        this.statement = statement;
+    }
+
+    public ResultSet getRs() {
+        return rs;
+    }
+
+    public void setRs(ResultSet rs) {
+        this.rs = rs;
+    }
 
     public String getUserName() {
         return userName;
@@ -64,41 +90,13 @@ public class SqlAccess {
         try{
             connection= DriverManager.getConnection(databaseURL,userName,password);
             statement=connection.createStatement();
+
         }catch (SQLException e){
             System.out.println("Connection fail "+e.getMessage()+" either wrong password or username");
         }
     }
-    public void insertData(String tableName,String ...values){
-
-        if(statement!=null){
-            try{
-                for(String v : values){
-                    //print out sql syntax
-                    //System.out.println("INSERT INTO "+tableName+" VALUES("+v+")");
-                    statement.executeUpdate("INSERT INTO "+tableName+" VALUES("+v+")");
-                }
-            }catch (SQLException e){
-                System.out.println(e.getMessage());
-            }
 
 
-        }
-        else{
-            System.out.println("Open connection first");
-        }
-
-
-    }
-    public ResultSet retriveData(String query){
-
-        try {
-            rs = statement.executeQuery(query);
-
-        }catch (SQLException e){
-            System.out.println("Error:"+e.getMessage());
-        }
-        return rs;
-    }
     public void closeConnection(){
         if(rs!=null){
             try{

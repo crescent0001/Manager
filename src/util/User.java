@@ -1,6 +1,6 @@
 package util;
 ///nnned update fotr field date
-import database.SqlAccess;
+import database.SqlStoreData;
 
 import java.sql.Date;
 
@@ -21,7 +21,6 @@ public class User {
         this.password=password;
         this.adminNo=adminNo;
         this.email=email;
-
     }
 
     public String getName() {
@@ -76,9 +75,11 @@ public class User {
 
     }
     public void updateDataBase(){
-        SqlAccess sqlAccess=new SqlAccess();
-        sqlAccess.openConnection();
-        sqlAccess.insertData("user","\""+name+"\",\""+gender+"\","+birthDate+",\""+adminNo+"\",\""+email+"\",\""+password+"\"");
-        sqlAccess.closeConnection();
+        SqlStoreData update=new SqlStoreData();
+        update.openConnection();
+
+        update.insertData("user","\""+name+"\",\""+gender+"\",\""+birthDate.toString()+"\",\""+adminNo+"\",\""+email+"\",\""+password+"\"");
+        update.closeConnection();
+
     }
 }

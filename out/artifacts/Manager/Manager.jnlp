@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Manager.jar" size="56774" download="eager" />
+    <jar href="Manager.jar" size="62210" download="eager" />
     <jar href="jfoenix.jar" size="2253802" download="eager" />
   </resources>
 <security>

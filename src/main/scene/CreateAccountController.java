@@ -3,6 +3,7 @@ package main.scene;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.sql.Date;
 import java.util.ResourceBundle;
 
@@ -21,6 +22,7 @@ import util.User;
 import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Node;
 
 public class CreateAccountController implements Initializable {
+    private String[] monthInNumber;
 
     @FXML
     private ComboBox<String> month;
@@ -58,6 +60,7 @@ public class CreateAccountController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         month.getItems().addAll("January","Febuary","March","April","May","June","July","August","September","October","November","December");
+        monthInNumber=new String[]{"01","02","03","04","05","06","07","08","09","10","11","12"};
         radioButFemale.setUserData("Female");
         radioButMale.setUserData("Male");
         radioButOther.setUserData("Other");
@@ -66,13 +69,23 @@ public class CreateAccountController implements Initializable {
     }
     @FXML
     void signUp(ActionEvent event) {
+        //convert date to string format
+        String mth="01";//set default
+        try {
+             mth= monthInNumber[month.selectionModelProperty().get().getSelectedIndex()];
+        }catch(ArrayIndexOutOfBoundsException e){
+            System.out.println(e);
+
+        }
+        String birthDateText=yearField.getText()+"-"+mth+"-"+dayField.getText();
+
         User user=new User(
-                nameField.getText(),
-                genderGroup.getSelectedToggle().getUserData().toString(),
-                new Date(yearField.getText(),,dayField.getText()),
-                passwordField.getText(),
-                adminNoField.getText(),
-                emailField.getText());
+                nameField.getText(),                                               //name
+                genderGroup.getSelectedToggle().getUserData().toString(),         //gender
+                java.sql.Date.valueOf(birthDateText),                            //date in sql.Date format
+                passwordField.getText(),                                        //pass
+                adminNoField.getText(),                                        //adminNo
+                emailField.getText());                                        //email
         user.updateDataBase();
 
         try{
@@ -82,9 +95,6 @@ public class CreateAccountController implements Initializable {
             stage.hide();
             stage.setScene(scene);
             stage.show();
-
-
-
         }catch (IOException e){
             System.out.println(e.getMessage());
         }
