@@ -2,10 +2,10 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import util.PomodoroTimer;
-
-import java.awt.*;
+import javafx.stage.StageStyle;
 
 
 public class Main extends Application {
@@ -15,17 +15,21 @@ public class Main extends Application {
 
         Parent root = FXMLLoader.load(getClass().getResource("/main/scene/Login.fxml"));
         //Parent root = FXMLLoader.load(getClass().getResource("/main/scene/email.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getResource("/main/scene/PomodoroTimer.fxml"));
         primaryStage.setTitle("Personal Manager");
         primaryStage.setScene(new Scene(root));
         //primaryStage.setResizable(false);
         //primaryStage.setWidth(root.getScene().getWidth());
+        primaryStage.getIcons().add(new Image("/image/icon.png"));
+        Font.loadFont(getClass().getResourceAsStream("/fonts/AMDRTG.ttf"), 20);
+        Font.loadFont(getClass().getResourceAsStream("/fonts/Roboto-Light.ttf"), 15);
         primaryStage.show();
     }
 
 
     public static void main(String[] args) {
 
-        //PomodoroTimer timer=new PomodoroTimer();
+        //PomodoroTimerController timer=new PomodoroTimerController();
         //timer.start();
         launch(args);
     }

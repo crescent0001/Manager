@@ -55,7 +55,7 @@ public class SqlAccess {
 
 
     }
-    public ResultSet retriveData(String query){
+    public ResultSet retrieveData(String query){
 
         try {
             rs = statement.executeQuery(query);
