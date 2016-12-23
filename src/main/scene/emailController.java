@@ -58,6 +58,9 @@ public class emailController implements Initializable{
         retriveMail();
 
         emailList.setOnMouseClicked(event -> openMail(event,messages.length-1-emailList.getSelectionModel().getSelectedIndex()));
+        if(messages==null){
+            System.out.println("null");
+        }
 
 
         for(int i=(messages.length-1);i>=0;i--){
@@ -86,14 +89,14 @@ public class emailController implements Initializable{
 
             emailTitle.setText(message.getSubject());
             sentDate.setText(message.getSentDate().toString());
-            emailContent.setText(message.getContentType());
+            emailContent.setText(message.getContent().toString());
             //System.out.println(emailList.getSelectionModel().getSelectedIndex()+"  inddex: "+index);
 
         } catch (MessagingException e) {
             e.printStackTrace();
-        }/*catch (IOException e){
+        }catch (IOException e){
             e.printStackTrace();
-        }*/
+        }
 
 
     }
