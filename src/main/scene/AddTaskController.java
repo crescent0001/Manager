@@ -2,6 +2,7 @@ package main.scene;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import database.SqlAccess;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 
@@ -28,5 +29,10 @@ public class AddTaskController implements Initializable{
         Stage stage = (Stage) saveButton.getScene().getWindow();
         // do what you have to do
         stage.close();
+    }
+
+    private void setTask() {
+        SqlAccess sqlAccess = new SqlAccess();
+        sqlAccess.openConnection();
     }
 }

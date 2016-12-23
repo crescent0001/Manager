@@ -4,7 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -17,10 +16,19 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static javafx.fxml.FXMLLoader.load;
+
 /**
  * Created by Liu Woon Kit on 1/12/2016.
  */
 public class CalendarController extends MainSceneController implements Initializable {
+    private final Label[] daysLabel = new Label[7];
+    private final Button[] daysButton = new Button[42];
+    private final Button[] monthButton = new Button[12];
+
+    private final String[] dayOfWeek = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+    private final String[] monthOfYear = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+
     Calendar cal = new Calendar();
 
     @FXML
@@ -51,12 +59,11 @@ public class CalendarController extends MainSceneController implements Initializ
     }
 
     public void periodSelector() throws IOException {
+        //fuck dis
+        Parent root = FXMLLoader.load(getClass().getResource("CalendarPeriod.fxml"));
+        Scene scene = new Scene(root);
         Stage secondaryStage = new Stage();
-        Parent p =  FXMLLoader.load(getClass().getResource("CalendarPeriod.fxml"));
-        Scene periodScene = new Scene(p);
-        secondaryStage.setScene(periodScene);
-        secondaryStage.setTitle("Add Task");
-        secondaryStage.setResizable(false);
+        secondaryStage.setScene(scene);
         secondaryStage.show();
     }
 
@@ -67,7 +74,7 @@ public class CalendarController extends MainSceneController implements Initializ
 
         //set labels
         for(int u = 0; u < 7; u++) {
-            calGrid.add(cal.daysLabel[u] = new Label(cal.dayOfWeek[u]), u, 0);
+            calGrid.add(daysLabel[u] = new Label(dayOfWeek[u]), u, 0);
         }
 
         //create blank buttons with events
@@ -77,13 +84,13 @@ public class CalendarController extends MainSceneController implements Initializ
                 y = 0;
                 x++;
             }
-            calGrid.add(cal.daysButton[i] = new Button(), y, x);
+            calGrid.add(daysButton[i] = new Button(), y, x);
             int tempIndex = i;
-            cal.daysButton[i].setOnAction(ActionEvent -> {
+            daysButton[i].setOnAction(ActionEvent -> {
                 cal.setCurrentMode("PeriodPicker");
                 //debug line
-                System.out.println(Integer.parseInt(cal.daysButton[tempIndex].getText()));
-                cal.setSelectedDay(Integer.parseInt(cal.daysButton[tempIndex].getText()));
+                System.out.println(Integer.parseInt(daysButton[tempIndex].getText()));
+                cal.setSelectedDay(Integer.parseInt(daysButton[tempIndex].getText()));
                 try {
                     periodSelector();
                 } catch (IOException e) {
@@ -96,7 +103,7 @@ public class CalendarController extends MainSceneController implements Initializ
 
         //fill blank buttons with numbers
         for(int i = cal.getFirstDay(), j = 0; j < cal.getLastDayOfMonth(); i++) {
-            cal.daysButton[i - 1].setText((j + 1) + "");
+            daysButton[i - 1].setText((j + 1) + "");
             j++;
         }
     }
@@ -111,18 +118,18 @@ public class CalendarController extends MainSceneController implements Initializ
                 y = 1;
                 x = 0;
             }
-            calGrid.add(cal.monthButton[i] = new Button(cal.monthOfYear[i]), x, y);
+            calGrid.add(monthButton[i] = new Button(monthOfYear[i]), x, y);
             x++;
 
             //set j = i to bypass error
             int j = i;
             //set onclick event
-            cal.monthButton[i].setOnAction(ActionEvent -> {
+            monthButton[i].setOnAction(ActionEvent -> {
                 cal.setCurrentMode("DayPicker");
-                System.out.println(cal.monthButton[j].getText());
+                System.out.println(monthButton[j].getText());
                 //To-do: clean up this part using array, note please don't touch this team
                 for(int p = 0; p < 6; p++) {
-                    if (cal.monthButton[j].getText() == cal.monthOfYear[p]) {
+                    if (monthButton[j].getText() == monthOfYear[p]) {
                         cal.setSelectedMonth(p);
                         break;
                     }
@@ -138,7 +145,7 @@ public class CalendarController extends MainSceneController implements Initializ
         clearGrid();
         cal.setCurrentMode("YearPicker");
         calPicker.setText("2000 - 2099");
-    }
+}
 
     public void clearGrid() {
         //wipe grid of elements

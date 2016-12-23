@@ -9,11 +9,8 @@ import java.util.GregorianCalendar;
  */
 public class Calendar {
     private GregorianCalendar date = new GregorianCalendar();
-    public final Label[] daysLabel = new Label[7];
-    public final Button[] daysButton = new Button[42];
-    public final Button[] monthButton = new Button[12];
-    public final String[] dayOfWeek = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
-    public final String[] monthOfYear = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+
+    private final String[] monthOfYear = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 
     private final int currentDay = date.get(GregorianCalendar.DAY_OF_MONTH);
     private final int currentMonth = date.get(GregorianCalendar.MONTH);
@@ -28,6 +25,7 @@ public class Calendar {
 
     private String currentMode = "DayPicker";
 
+    //Accessor & Mutator methods from here
     public int getSelectedDay() {
         return date.get(GregorianCalendar.DAY_OF_MONTH);
     }
@@ -51,6 +49,7 @@ public class Calendar {
     public void setSelectedYear(int selectedYear) {
         date.set(GregorianCalendar.YEAR, selectedYear);
     }
+    //end here
 
     public int getFirstDay() {
         date.set(GregorianCalendar.DAY_OF_MONTH, 1);
