@@ -122,7 +122,7 @@ public class emailController implements Initializable{
 
     }
     public void retriveMail(){
-        RetriveEmail re=new RetriveEmail("160244J","hhfxyjshehefei9");
+        RetriveEmail re=new RetriveEmail("","");
         re.openConnection();
         messages= re.retriveEmail();
 
