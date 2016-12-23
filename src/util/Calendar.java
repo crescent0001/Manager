@@ -9,9 +9,12 @@ import java.util.GregorianCalendar;
  */
 public class Calendar {
     private GregorianCalendar date = new GregorianCalendar();
-    public Label[] daysLabel = new Label[7];
-    public Button[] daysButton = new Button[42];
-    public Button[] monthButton = new Button[12];
+
+    private final String[] monthOfYear = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+
+    private final int currentDay = date.get(GregorianCalendar.DAY_OF_MONTH);
+    private final int currentMonth = date.get(GregorianCalendar.MONTH);
+    private final int currentYear = date.get(GregorianCalendar.YEAR);
 
     private int selectedDay = date.get(GregorianCalendar.DAY_OF_MONTH);
     private int selectedMonth = date.get(GregorianCalendar.MONTH);
@@ -19,10 +22,10 @@ public class Calendar {
 
     private int firstDay;
     private int lastDayOfMonth;
-    private int currentMonth= date.get(GregorianCalendar.MONTH);
 
     private String currentMode = "DayPicker";
 
+    //Accessor & Mutator methods from here
     public int getSelectedDay() {
         return date.get(GregorianCalendar.DAY_OF_MONTH);
     }
@@ -46,6 +49,7 @@ public class Calendar {
     public void setSelectedYear(int selectedYear) {
         date.set(GregorianCalendar.YEAR, selectedYear);
     }
+    //end here
 
     public int getFirstDay() {
         date.set(GregorianCalendar.DAY_OF_MONTH, 1);
@@ -56,8 +60,8 @@ public class Calendar {
         return lastDayOfMonth = date.getActualMaximum(GregorianCalendar.DAY_OF_MONTH);
     }
 
-    public void setCurrentMode(String uzi) {
-        currentMode = uzi;
+    public void setCurrentMode(String currentMode) {
+        this.currentMode = currentMode;
     }
 
     public String getCurrentMode() {
@@ -65,45 +69,7 @@ public class Calendar {
     }
 
     public String getStringDate() {
-        String x = date.get(GregorianCalendar.MONTH) +"";
-        switch(x) {
-            case "0":
-                x = "January";
-                break;
-            case "1":
-                x = "February";
-                break;
-            case "2":
-                x = "March";
-                break;
-            case "3":
-                x = "April";
-                break;
-            case "4":
-                x = "May";
-                break;
-            case "5":
-                x = "June";
-                break;
-            case "6":
-                x = "July";
-                break;
-            case "7":
-                x = "August";
-                break;
-            case "8":
-                x = "September";
-                break;
-            case "9":
-                x = "October";
-                break;
-            case "10":
-                x = "November";
-                break;
-            case "11":
-                x = "December";
-                break;
-        }
+        String x = monthOfYear[date.get(GregorianCalendar.MONTH)];
         String StringDate = x + " " + date.get(GregorianCalendar.YEAR);
         return StringDate;
     }

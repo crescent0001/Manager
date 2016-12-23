@@ -3,8 +3,7 @@
 
 }
 .toggle-button:selected{
-    -fx-background-color:#21d757;
-    -fx-effect: dropshadow(three-pass-box, black, 10, 0, 0, 0)
+    -fx-background-color:#7986cb;
 
 
 }
@@ -12,5 +11,5 @@
     -fx-background-color:transparent;
 }
 #userIcon:hover{
-    -fx-background-color:#679105;
+    -fx-background-color:#9fa8da;
 }
