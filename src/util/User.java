@@ -1,5 +1,6 @@
 package util;
 ///nnned update fotr field date
+import database.DataBase;
 import database.SqlStoreData;
 
 import java.sql.Date;
@@ -7,7 +8,7 @@ import java.sql.Date;
 /**
  * Created by hehef on 12/16/2016.
  */
-public class User {
+public class User implements DataBase{
     private String name;
     private String gender;
     private Date birthDate;
@@ -74,12 +75,29 @@ public class User {
     public User(){
 
     }
-    public void updateDataBase(){
+
+    @Override
+    public void updateData() {
+
+    }
+
+    @Override
+    public void storeData() {
         SqlStoreData update=new SqlStoreData();
         update.openConnection();
 
         update.insertData("user","\""+name+"\",\""+gender+"\",\""+birthDate.toString()+"\",\""+adminNo+"\",\""+email+"\",\""+password+"\"");
         update.closeConnection();
+
+    }
+
+    @Override
+    public void retriveData() {
+
+    }
+
+    @Override
+    public void deleteData() {
 
     }
 }

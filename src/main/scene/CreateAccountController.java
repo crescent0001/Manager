@@ -86,7 +86,7 @@ public class CreateAccountController implements Initializable {
                 passwordField.getText(),                                        //pass
                 adminNoField.getText(),                                        //adminNo
                 emailField.getText());                                        //email
-        user.updateDataBase();
+        user.storeData();
 
         try{
             Stage stage=(Stage)((Node)event.getTarget()).getScene().getWindow();
