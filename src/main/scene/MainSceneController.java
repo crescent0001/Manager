@@ -54,10 +54,12 @@ public class MainSceneController implements Initializable{
     @FXML
     void emailClick(ActionEvent event) throws IOException {
         content.getChildren().setAll((AnchorPane)FXMLLoader.load(getClass().getResource("email.fxml")));
+
     }
 
     @FXML
     void timerClick(ActionEvent event) throws IOException{
         content.getChildren().setAll((AnchorPane)FXMLLoader.load(getClass().getResource("PomodoroTimer.fxml")));
+
     }
 }

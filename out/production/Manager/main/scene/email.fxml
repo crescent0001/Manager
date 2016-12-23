@@ -45,7 +45,7 @@
             </AnchorPane>
             <AnchorPane prefHeight="672.0" prefWidth="611.0" style="-fx-background-color: #eaebed;">
                <children>
-                  <Label layoutX="37.0" layoutY="17.0" prefHeight="56.0" prefWidth="265.0" text="Email topic" textFill="#21d757">
+                  <Label fx:id="emailTitle" layoutX="37.0" layoutY="17.0" prefHeight="56.0" prefWidth="265.0" textFill="#21d757">
                      <font>
                         <Font size="21.0" />
                      </font>
@@ -57,21 +57,17 @@
                   </Label>
                   <AnchorPane layoutY="82.0" prefHeight="592.0" prefWidth="610.0">
                      <children>
-                        <ScrollPane fx:id="emailContent" layoutX="58.0" layoutY="46.0" prefHeight="592.0" prefWidth="610.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <ScrollPane layoutX="58.0" layoutY="46.0" prefHeight="592.0" prefWidth="610.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <content>
                               <AnchorPane prefHeight="589.0" prefWidth="608.0">
                                  <children>
-                                    <Label layoutX="223.0" layoutY="231.0" prefHeight="64.0" prefWidth="149.0" text="Email Content" textAlignment="CENTER" textFill="#21d757">
-                                       <font>
-                                          <Font size="23.0" />
-                                       </font>
-                                    </Label>
+                                    <TextArea fx:id="emailContent" prefHeight="592.0" prefWidth="610.0" />
                                  </children>
                               </AnchorPane>
                            </content></ScrollPane>
                      </children>
                   </AnchorPane>
-                  <Label layoutX="482.0" layoutY="30.0" text="Date" textFill="#21d757">
+                  <Label fx:id="sentDate" layoutX="482.0" layoutY="30.0" textFill="#21d757">
                      <font>
                         <Font size="21.0" />
                      </font>

@@ -19,6 +19,7 @@ public class Main extends Application {
         primaryStage.setTitle("Personal Manager");
         primaryStage.setScene(new Scene(root));
         //primaryStage.setResizable(false);
+        //primaryStage.sizeToScene();
         //primaryStage.setWidth(root.getScene().getWidth());
         primaryStage.getIcons().add(new Image("/image/icon.png"));
         Font.loadFont(getClass().getResourceAsStream("/fonts/AMDRTG.ttf"), 20);
