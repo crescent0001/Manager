@@ -1,18 +1,22 @@
 package main.scene;
 
+import email.RetriveEmail;
+import javafx.beans.InvalidationListener;
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.ToggleButton;
+import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Multipart;
+import java.io.IOException;
 import java.net.URL;
-import java.util.Observable;
-import java.util.ResourceBundle;
+import java.util.*;
 
 /**
  * Created by hehef on 12/6/2016.
@@ -20,13 +24,24 @@ import java.util.ResourceBundle;
 public class emailController implements Initializable{
     @FXML
     private ListView<String> emailList;
-    ObservableList<String> inboxList=FXCollections.observableArrayList("hefeiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii","hefei2","hefei3","hefei4");
+    ObservableList<String> inboxList=FXCollections.observableArrayList();
     ObservableList<String> sentList=FXCollections.observableArrayList("crescens","crescens","crescens","crescens");
+    //mail list
+    private Message[] messages;
 
 
 
     @FXML
     private Label emailDate;
+
+    @FXML
+    private Label sentDate;
+
+    @FXML
+    private Label emailTitle;
+
+    @FXML
+    private TextArea emailContent;
 
 
     @FXML
@@ -36,10 +51,26 @@ public class emailController implements Initializable{
     private Label topicText;
 
 
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        retriveMail();
+
+        emailList.setOnMouseClicked(event -> openMail(event,messages.length-1-emailList.getSelectionModel().getSelectedIndex()));
 
 
+        for(int i=(messages.length-1);i>=0;i--){
+            try {
+                inboxList.add(messages[i].getSubject()+" "+messages[i].getSentDate().toString());
+            }catch(MessagingException e){
+                e.printStackTrace();
+            }/*catch(IOException e){
+                e.printStackTrace();
+
+            }*/
+
+        }
 
         emailList.setItems(inboxList);
 
@@ -47,8 +78,22 @@ public class emailController implements Initializable{
         topicText.setText("Inbox");
         inboxButton.setSelected(true);
 
+    }
+    public void openMail(MouseEvent event,int index){
+        Message message=messages[index];
 
+        try {
 
+            emailTitle.setText(message.getSubject());
+            sentDate.setText(message.getSentDate().toString());
+            emailContent.setText(message.getContentType());
+            //System.out.println(emailList.getSelectionModel().getSelectedIndex()+"  inddex: "+index);
+
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }/*catch (IOException e){
+            e.printStackTrace();
+        }*/
 
 
     }
@@ -64,8 +109,6 @@ public class emailController implements Initializable{
     void sent(ActionEvent event) {
         topicText.setText("Sent");
         emailList.setItems(sentList);
-
-
     }
     @FXML
     void trash(ActionEvent event) {
@@ -76,6 +119,14 @@ public class emailController implements Initializable{
     @FXML
     void important(ActionEvent event) {
         topicText.setText("Important");
+
+    }
+    public void retriveMail(){
+        RetriveEmail re=new RetriveEmail("160244J","hhfxyjshehefei9");
+        re.openConnection();
+        messages= re.retriveEmail();
+
+
 
     }
 }

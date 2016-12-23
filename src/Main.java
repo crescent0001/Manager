@@ -17,8 +17,8 @@ public class Main extends Application {
         //Parent root = FXMLLoader.load(getClass().getResource("/main/scene/email.fxml"));
         primaryStage.setTitle("Personal Manager");
         primaryStage.setScene(new Scene(root));
-        primaryStage.setResizable(false);
-        primaryStage.sizeToScene();
+        //primaryStage.setResizable(false);
+        //primaryStage.sizeToScene();
         //primaryStage.setWidth(root.getScene().getWidth());
         primaryStage.show();
     }

@@ -17,8 +17,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class LoginController implements Initializable {
-    private String password="12345";
-    private String username="crescens";
+    private String password="";
+    private String username="";
     @FXML
     private TextField nameTextField;
 

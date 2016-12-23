@@ -93,7 +93,9 @@ public class CreateAccountController implements Initializable {
             Parent parent= FXMLLoader.load(getClass().getResource("Login.fxml"));
             Scene scene=new Scene(parent);
             stage.hide();
+
             stage.setScene(scene);
+            //stage.sizeToScene();
             stage.show();
         }catch (IOException e){
             System.out.println(e.getMessage());

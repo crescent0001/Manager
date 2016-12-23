@@ -59,12 +59,6 @@ public class MainSceneController implements Initializable{
 
     @FXML
     void emailClick(ActionEvent event) throws IOException {
-        System.out.print("hee");
-
         content.getChildren().setAll((AnchorPane)FXMLLoader.load(getClass().getResource("email.fxml")));
-
-
-
-
     }
 }
