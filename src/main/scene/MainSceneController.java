@@ -29,8 +29,6 @@ public class MainSceneController implements Initializable{
     @FXML
     void homeClick(ActionEvent event) throws IOException{
         content.getChildren().setAll((VBox)FXMLLoader.load(getClass().getResource("home.fxml")));
-
-
     }
     private Parent loadSceneFile(String fileName) throws  IOException{
         Parent p=FXMLLoader.load(getClass().getResource(fileName));
@@ -41,24 +39,27 @@ public class MainSceneController implements Initializable{
     @FXML
     void calendarClick(ActionEvent event) throws IOException{
         content.getChildren().setAll((BorderPane)FXMLLoader.load(getClass().getResource("Calendar.fxml")));
-
     }
 
     @FXML
     void taskListClick(ActionEvent event) throws IOException {
         content.getChildren().setAll((AnchorPane)FXMLLoader.load(getClass().getResource("Tasklist.fxml")));
-
-
     }
 
     @FXML
     void noteClick(ActionEvent event) throws IOException{
         content.getChildren().setAll((AnchorPane)FXMLLoader.load(getClass().getResource("Notes.fxml")));
-
     }
 
     @FXML
     void emailClick(ActionEvent event) throws IOException {
         content.getChildren().setAll((AnchorPane)FXMLLoader.load(getClass().getResource("email.fxml")));
+
+    }
+
+    @FXML
+    void timerClick(ActionEvent event) throws IOException{
+        content.getChildren().setAll((AnchorPane)FXMLLoader.load(getClass().getResource("PomodoroTimer.fxml")));
+
     }
 }

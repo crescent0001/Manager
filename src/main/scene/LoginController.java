@@ -2,8 +2,10 @@ package main.scene;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+import database.LoginAccess;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,8 +19,12 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class LoginController implements Initializable {
+
+    private LoginAccess loginAccess = new LoginAccess();
+
     private String password="";
     private String username="";
+
     @FXML
     private TextField nameTextField;
 
@@ -32,9 +38,14 @@ public class LoginController implements Initializable {
         // TODO
     }
     @FXML
-    void login(ActionEvent event) throws IOException{
-        if(nameTextField.getText().equals(username)&&passTextField.getText().equals(password)){
-            Parent p = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
+    void login(ActionEvent event) throws SQLException {
+        if(loginAccess.checkLogin(nameTextField.getText(), passTextField.getText()) == true){
+            Parent p = null;
+            try {
+                p = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             Stage stage=(Stage)((Node)event.getTarget()).getScene().getWindow();
             Scene scene=new Scene(p);
             stage.hide();
@@ -45,10 +56,6 @@ public class LoginController implements Initializable {
         else {
             wrongText.setText("Wrong username or password");
         }
-
-
-
-
 
 
     }
@@ -73,6 +80,11 @@ public class LoginController implements Initializable {
 
 
 
+    }
+
+    @FXML
+    void cancelLogin(ActionEvent event) {
+        System.exit(0);
     }
 
 }
