@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.scene.EmailContentController">
+   <children>
+      <Label fx:id="subject" layoutX="23.0" layoutY="21.0" text="Label" textFill="#1c97d0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Separator layoutX="6.0" layoutY="52.0" prefHeight="1.0" prefWidth="1016.0" />
+      <Label fx:id="sender" layoutX="23.0" layoutY="66.0" text="sender">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="receiveDate" layoutX="771.0" layoutY="66.0" text="receiveDate">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="cc" layoutX="23.0" layoutY="89.0" text="cc" textFill="#726d6d" />
+      <AnchorPane layoutX="19.0" layoutY="119.0" prefHeight="632.0" prefWidth="986.0" style="-fx-border-width: 1px; -fx-border-color: #afafaf;">
+         <children>
+            <ScrollPane fx:id="scrollPane" layoutX="174.0" layoutY="132.0" prefHeight="632.0" prefWidth="986.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <content>
+                  <AnchorPane fx:id="messageBody" prefHeight="611.0" prefWidth="982.0" />
+               </content></ScrollPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

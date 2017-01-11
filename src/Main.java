@@ -18,6 +18,7 @@ public class Main extends Application {
         //Parent root = FXMLLoader.load(getClass().getResource("/main/scene/PomodoroTimer.fxml"));
         primaryStage.setTitle("Personal Manager");
         primaryStage.setScene(new Scene(root));
+        //primaryStage.initStyle(StageStyle.UNDECORATED);
         //primaryStage.setResizable(false);
         //primaryStage.sizeToScene();
         //primaryStage.setWidth(root.getScene().getWidth());

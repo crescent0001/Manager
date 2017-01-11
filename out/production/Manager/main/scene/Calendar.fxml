@@ -4,7 +4,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="672.0" prefWidth="917.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.scene.CalendarController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="672.0" prefWidth="917.0" stylesheets="@Calendar.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.scene.CalendarController">
    <center>
       <GridPane fx:id="calGrid" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -28,13 +28,13 @@
       </GridPane>
    </center>
    <top>
-      <SplitPane prefHeight="50.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <SplitPane prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: #eceff1;" BorderPane.alignment="CENTER">
          <items>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Button layoutX="873.0" layoutY="9.0" mnemonicParsing="false" onAction="#ButtonMinus" text="↓" />
-                  <Button layoutX="839.0" layoutY="9.0" mnemonicParsing="false" onAction="#ButtonPlus" text="↑" />
-                  <Button fx:id="calPicker" layoutX="14.0" layoutY="9.0" mnemonicParsing="false" onAction="#setPicker" text="Placeholder" />
+                  <Button layoutX="873.0" layoutY="9.0" mnemonicParsing="false" onAction="#ButtonMinus" style="-fx-background-color: #455a64; -fx-text-fill: #ffffff;" text="↓" />
+                  <Button layoutX="839.0" layoutY="9.0" mnemonicParsing="false" onAction="#ButtonPlus" style="-fx-background-color: #455a64; -fx-text-fill: #ffffff;" text="↑" />
+                  <Button fx:id="calPicker" layoutX="14.0" layoutY="9.0" mnemonicParsing="false" onAction="#setPicker" style="-fx-background-color: #455a64; -fx-text-fill: #ffffff;" text="Placeholder" />
                </children>
             </AnchorPane>
          </items>

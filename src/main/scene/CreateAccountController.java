@@ -88,7 +88,7 @@ public class CreateAccountController implements Initializable {
                 emailField.getText());                                        //email
         user.storeData();
 
-        try{
+       /* try{
             Stage stage=(Stage)((Node)event.getTarget()).getScene().getWindow();
             Parent parent= FXMLLoader.load(getClass().getResource("Login.fxml"));
             Scene scene=new Scene(parent);
@@ -99,7 +99,16 @@ public class CreateAccountController implements Initializable {
             stage.show();
         }catch (IOException e){
             System.out.println(e.getMessage());
-        }
+        }*/
+
+    }
+    @FXML
+    void cancel(ActionEvent event){
+        Stage stage=(Stage)((Node)event.getTarget()).getScene().getWindow();
+        stage.close();
+
+    }
+    private void closeStage(){
 
     }
 }

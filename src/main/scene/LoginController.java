@@ -16,6 +16,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class LoginController implements Initializable {
@@ -67,9 +68,11 @@ public class LoginController implements Initializable {
 
         try {
             Parent p = FXMLLoader.load(getClass().getResource("CreateAccount.fxml"));
-            Stage stage=(Stage)((Node)event.getTarget()).getScene().getWindow();
+            //use original window
+           // Stage stage=(Stage)((Node)event.getTarget()).getScene().getWindow();
+            Stage stage=new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
             Scene scene=new Scene(p);
-            stage.hide();
             stage.setScene(scene);
             stage.show();
         }catch(IOException e){

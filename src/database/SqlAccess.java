@@ -6,7 +6,7 @@ import java.sql.*;
  * Created by hehef on 12/15/2016.
  */
 public class SqlAccess {
-    private final String DRIVER="com.mysql.jdbc.Driver
+    private final String DRIVER="com.mysql.jdbc.Driver";
 
     private final String DEFAULT_DATABASE_URL="jdbc:mysql://localhost:3306/manager?useSSL=false";
 
